@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserInfo from "./UserInfo";
-import { thunk_action_creator } from "../actions/fetchAction";
+import { thunk_action_creator } from "../api";
 import "./app.scss";
 
 class App extends Component {

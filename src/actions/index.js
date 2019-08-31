@@ -4,10 +4,10 @@ export const fetch_post = () => {
   };
 };
 
-export const receive_post = post => {
+export const receive_post = (response) => {
   return {
     type: "FETCHED_USER",
-    data: post
+    payload: response
   };
 };
 

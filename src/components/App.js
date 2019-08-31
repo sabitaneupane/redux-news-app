@@ -1,45 +1,40 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import UserInfo from "./UserInfo";
-import { thunk_action_creator } from "../api";
+import { getData } from "../api";
 import "./app.scss";
 
 class App extends Component {
-  handleSubmit = e => {
-    e.preventDefault();
-    const username = this.getUsername.value;
-    this.props.dispatch(thunk_action_creator(username));
-    this.getUsername.value = "";
-  };
+  componentDidMount() {
+    this.props.dispatch(getData());
+  }
   render() {
-    console.log(this.props.data);
+    const { postData, isError, isFetching } = this.props;
     return (
-      <div className="container">
-        <form onSubmit={this.handleSubmit} className="form">
-          <h2 className="title">Enter the Github Username</h2>
-          <input
-            type="text"
-            placeholder="Enter Github Username"
-            required
-            ref={input => (this.getUsername = input)}
-          />
-          <button className="button">Submit</button>
-        </form>
-        {this.props.data.isFetching ? <h3>Loading...</h3> : null}
-        {this.props.data.isError ? (
-          <h3 className="error">No such User exists.</h3>
-        ) : null}
-        {Object.keys(this.props.data.userData).length > 0 ? (
-          <UserInfo user={this.props.data.userData} />
-        ) : null}
+      <div>
+        <h1> Post </h1>
+        {
+          isFetching ?
+            <h3> Loading... <br /><br /></h3> 
+            :
+            Array.from(postData).map((post, index) => {
+              return (
+                <div key={index} className="post-content">
+                  <h2> {post.title} </h2>
+                  <p> {post.body} </p>
+                </div>
+              );
+            })
+        }
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = store => {
   return {
-    data: state
+    postData: store.postData,
+    isError: store.isError,
+    isFetching: store.isFetching,
   };
 };
 export default connect(mapStateToProps)(App);

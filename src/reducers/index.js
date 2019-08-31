@@ -1,28 +1,26 @@
 const initialState = {
-  userData: {},
+  postData: {},
   isFetching: false,
   isError: false
 };
 
 const asyncReducer = (state = initialState, action) => {
+  const newState = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case "FETCH_USER":
-      return Object.assign({}, state, {
-        isFetching: true,
-        userData: {},
-        isError: false
-      });
+      newState.postData = {};
+      newState.isFetching = true;
+      newState.isError = false;
+      return newState;
     case "FETCHED_USER":
-      return Object.assign({}, state, {
-        userData: action.data,
-        isFetching: false,
-        isError: false
-      });
+        newState.postData = action.payload;
+        newState.isFetching = false;
+        newState.isError = false;
+        return newState;
     case "RECEIVE_ERROR":
-      return Object.assign({}, state, {
-        isError: true,
-        isFetching: false
-      });
+        newState.isFetching = true;
+        newState.isError = false;
+        return newState;
     default:
       return state;
   }

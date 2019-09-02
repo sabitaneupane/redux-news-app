@@ -18,7 +18,7 @@ const asyncReducer = (state = initialState, action) => {
         newState.isError = false;
         return newState;
     case "RECEIVE_ERROR":
-        newState.isFetching = true;
+        newState.isFetching = false;
         newState.isError = false;
         return newState;
     default:

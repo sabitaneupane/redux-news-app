@@ -11,21 +11,31 @@ class App extends Component {
     const { postData, isError, isFetching } = this.props;
     return (
       <div>
-        <h1> Post </h1>
         {
-          isFetching ?
-            <h3> Loading... <br /><br /></h3> 
+          !isError ?
+            <div>
+              <h1> Post </h1>
+              {
+                isFetching ?
+                  <div>
+                    <h3> Loading... <br /><br /></h3>
+                  </div>
+                  :
+                  Array.from(postData).map((post, index) => {
+                    return (
+                      <div key={index} className="post-content">
+                        <h2> {post.title} </h2>
+                        <p> {post.body} </p>
+                      </div>
+                    );
+                  })
+              }
+            </div>
             :
-            Array.from(postData).map((post, index) => {
-              return (
-                <div key={index} className="post-content">
-                  <h2> {post.title} </h2>
-                  <p> {post.body} </p>
-                </div>
-              );
-            })
+            <div> Something went wrong. </div>
         }
       </div>
+
     );
   }
 }

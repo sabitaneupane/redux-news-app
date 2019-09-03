@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Button from "./button";
 import GetNews from "./getnews";
-import Loading from "./loading";
+import Loading from "../utils/loading";
+import Error from "../utils/error";
 import "./app.scss";
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
         <h1> Click button below to fetch recent news.</h1>
         <Button />
         { this.props.isLoading ? <Loading /> : null }
-        { this.props.isError ? <p className="error-message"> Oops something went wrong. Please try again later. </p> : <GetNews /> }
+        { this.props.isError ? <Error /> : <GetNews /> }
       </div>
     );
   }

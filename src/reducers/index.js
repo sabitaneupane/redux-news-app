@@ -1,7 +1,8 @@
 const initialState = {
   postData: {},
-  isFetching: false,
-  isError: false
+  isLoading: false,
+  isError: false,
+  canViewNews: false,
 };
 
 const asyncReducer = (state = initialState, action) => {
@@ -9,17 +10,19 @@ const asyncReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_USER":
       newState.postData = {};
-      newState.isFetching = true;
+      newState.isLoading = true;
       newState.isError = false;
+      newState.canViewNews = false;
       return newState;
     case "FETCHED_USER":
         newState.postData = action.payload;
-        newState.isFetching = false;
+        newState.isLoading = false;
         newState.isError = false;
+        newState.canViewNews = true;
         return newState;
     case "RECEIVE_ERROR":
-        newState.isFetching = false;
-        newState.isError = false;
+        newState.isLoading = false;
+        newState.isError = true;
         return newState;
     default:
       return state;

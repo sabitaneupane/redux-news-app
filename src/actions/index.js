@@ -1,18 +1,18 @@
 export const fetch_post = () => {
   return {
-    type: "FETCH_USER"
+    type: "FETCH_NEWS"
   };
 };
 
 export const receive_post = (response) => {
   return {
-    type: "FETCHED_USER",
+    type: "FETCHED_NEWS_SUCCESS",
     payload: response
   };
 };
 
 export const receive_error = () => {
   return {
-    type: "RECEIVE_ERROR"
+    type: "FETCHED_NEWS_FAILED"
   };
 };

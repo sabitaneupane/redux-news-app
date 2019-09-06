@@ -4,7 +4,7 @@ import Button from "./button";
 import GetNews from "./getnews";
 import Loading from "../utils/loading";
 import Error from "../utils/error";
-import "./app.scss";
+import "../styles/app.scss";
 
 class App extends Component {
   render() {

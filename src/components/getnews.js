@@ -15,7 +15,7 @@ class App extends Component {
               return ( 
                 <div key={index} className="post-content">
                   <h2> {post.title} </h2>
-                  <p> {post.body} </p>
+                  <p> {post.description} </p>
                 </div>
               );
             })

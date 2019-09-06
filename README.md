@@ -11,3 +11,6 @@ refrences:
 * [Redux-Saga tutorial for beginners and dog lovers](https://hackernoon.com/redux-saga-tutorial-for-beginners-and-dog-lovers-aa69a17db645)
 * [Understanding redux-saga: From action creators to sagas](https://blog.logrocket.com/understanding-redux-saga-from-action-creators-to-sagas-2587298b5e71/)
 * [Introduction to Redux Saga](https://flaviocopes.com/redux-saga/)
+* [Swapping redux-thunk With redux-saga For Better Testing](http://bressain.com/blog/2017-11-10-swapping-redux-thunk-with-redux-saga/)
+* [3 common approaches to side-effects in Redux apps](https://goshakkk.name/redux-side-effect-approaches/)
+* [What the React? Sagas and side effects](https://smartcar.com/blog/what-the-react-sagas/)

@@ -14,3 +14,21 @@ h1{
   background: #efefef;
   margin:10px;
 }
+
+button{
+  background: darkcyan;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  margin:10px;
+}
+
+.getnews-button{
+  text-align: center;
+}
+
+.error-message, 
+.post-head{
+  text-align: center;
+  padding-top: 50px;
+}

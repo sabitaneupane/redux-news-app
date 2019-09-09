@@ -8,7 +8,7 @@ export const fetch_news = () => {
   };
 };
 
-export const receive_news = (response) => {
+export const receive_news = (response: object) => {
   return {
     type: FETCHED_NEWS_SUCCESS,
     payload: response

@@ -5,7 +5,7 @@ const initialState = {
   canViewNews: false,
 };
 
-const asyncReducer = (state = initialState, action) => {
+const asyncReducer = (state = initialState, action: any) => {
   const newState = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case "FETCH_NEWS":

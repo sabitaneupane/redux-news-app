@@ -14,7 +14,7 @@ export const Button: React.FunctionComponent<IProps> = (props) => {
   }
   return (
     <div className="getnews-button">
-      <button onClick={getNews} > get news </button>
+      <button onClick={getNews} className="btn btn-success"> get news </button>
     </div>
   );
 }

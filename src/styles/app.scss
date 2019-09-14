@@ -4,23 +4,47 @@ body {
   font-family: sans-serif;
 }
 
-h1{
+.news-container .card{
+  padding: 60px 20px;
+  width:400px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.card span{
   text-align: center;
 }
 
-.post-content{
-  border: 1px solid black;
-  padding: 20px;
-  background: #efefef;
-  margin:10px;
+.btn{
+  width: 100px;
 }
 
-button{
-  background: darkcyan;
-  color: white;
-  padding: 8px 20px;
-  border-radius: 20px;
+.page-title{
+  text-align: center;
+  font-size: 25px;
+}
+
+.page-subtitle{
+  text-align: center;
+  font-size: 18px;
+}
+
+.post-content{
+  padding: 5px;
+}
+
+.post-content-details{
   margin:10px;
+  background: #efefef;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.news-title,
+.news-description{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .getnews-button{

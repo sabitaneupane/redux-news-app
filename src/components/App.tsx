@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Button from "./button";
-import GetNews from "./getnews";
+import GetNews from "./news";
 import Loading from "../utils/loading";
 import Error from "../utils/error";
 import "../styles/app.scss";

@@ -33,7 +33,6 @@ export const Getnews: React.FunctionComponent<IProps> = (props: any) => {
           null
       }
     </div>
-
   );
 }
 

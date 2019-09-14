@@ -1,9 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 
+interface INews {
+  title: string,
+  description: string,
+}
 
 interface IProps {
-  postData: Array<string>,
+  postData: Array<INews>,
   canViewNews: boolean,
 }
 
@@ -17,7 +21,7 @@ export const Getnews: React.FunctionComponent<IProps> = (props: any) => {
       }
       {
         canViewNews ?
-          Array.from(postData).map((post, index) => {
+          Array.from(postData).map((post: any, index) => {
             return (
               <div key={index} className="post-content">
                 <h2> {post.title} </h2>

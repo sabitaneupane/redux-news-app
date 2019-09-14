@@ -24,20 +24,21 @@ export const Getnews: React.FunctionComponent<IProps> = (props: any) => {
   }, [])
   return (
     <div className="container">
-      <h3 className="post-head"> Recent News </h3>
+      <h3 className="page-title"> Recent News </h3>
       {isLoading ? <Loading /> : null}
       {
         isError ? <Error /> :
-          <div className="row">
+          <div className="row news-content">
             {
               canViewNews ?
                 Array.from(postData).map((post: any, index) => {
+                  const url = `/news/${post.post_id}`;
                   return (
-                    <div key={index} className="col-6 post-content">
-                      <div className="post-content-details">
+                    <div key={index} className="col-6">
+                      <div className="post-content card">
                         <h3 className="news-title"> {post.title} </h3>
                         <p className="news-description"> {post.description} </p>
-                        <NavLink to="/news"> Read More </NavLink>
+                        <NavLink to={url}> Read More </NavLink>
                       </div>
                     </div>
                   );

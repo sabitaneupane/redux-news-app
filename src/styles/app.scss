@@ -4,11 +4,26 @@ body {
   font-family: sans-serif;
 }
 
+.page-title{
+  text-align: center;
+  font-size: 25px;
+  padding: 60px 0px 20px 0px;
+}
+
+.page-subtitle{
+  text-align: center;
+  font-size: 18px;
+}
+
 .news-container .card{
   padding: 60px 20px;
-  width:400px;
+  width:800px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 30px;
+}
+
+.news-content{
+  margin-top: 30px;
 }
 
 .card span{
@@ -19,24 +34,8 @@ body {
   width: 100px;
 }
 
-.page-title{
-  text-align: center;
-  font-size: 25px;
-}
-
-.page-subtitle{
-  text-align: center;
-  font-size: 18px;
-}
-
 .post-content{
-  padding: 5px;
-}
-
-.post-content-details{
   margin:10px;
-  background: #efefef;
-  border: 1px solid black;
   padding: 20px;
 }
 

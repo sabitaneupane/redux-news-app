@@ -18,10 +18,17 @@ interface IProps {
 }
 
 export const Getnews: React.FunctionComponent<IProps> = (props: any) => {
-  const { newsData, canViewNews, isError, isLoading } = props;
+  const {
+    newsData,
+    canViewNews,
+    isError,
+    isLoading,
+  } = props;
+
   useEffect(() => {
     props.dispatch(fetch_news());
   }, [])
+
   return (
     <div className="container">
       <h3 className="page-title"> Recent News </h3>

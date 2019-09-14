@@ -11,14 +11,14 @@ interface INews {
 }
 
 interface IProps {
-  postData: Array<INews>,
+  newsData: Array<INews>,
   canViewNews: boolean,
   isError: boolean,
   isLoading: boolean,
 }
 
 export const Getnews: React.FunctionComponent<IProps> = (props: any) => {
-  const { postData, canViewNews, isError, isLoading } = props;
+  const { newsData, canViewNews, isError, isLoading } = props;
   useEffect(() => {
     props.dispatch(fetch_news());
   }, [])
@@ -31,13 +31,13 @@ export const Getnews: React.FunctionComponent<IProps> = (props: any) => {
           <div className="row news-content">
             {
               canViewNews ?
-                Array.from(postData).map((post: any, index) => {
-                  const url = `/news/${post.post_id}`;
+                Array.from(newsData).map((news: any, index) => {
+                  const url = `/news/${news.id}`;
                   return (
                     <div key={index} className="col-6">
-                      <div className="post-content card">
-                        <h3 className="news-title"> {post.title} </h3>
-                        <p className="news-description"> {post.description} </p>
+                      <div className="news-content card">
+                        <h3 className="news-title"> {news.title} </h3>
+                        <p className="news-description"> {news.description} </p>
                         <NavLink to={url}> Read More </NavLink>
                       </div>
                     </div>
@@ -54,7 +54,7 @@ export const Getnews: React.FunctionComponent<IProps> = (props: any) => {
 
 const mapStateToProps = store => {
   return {
-    postData: store.postData,
+    newsData: store.newsData,
     canViewNews: store.canViewNews,
     isError: store.isError,
     isLoading: store.isLoading,
